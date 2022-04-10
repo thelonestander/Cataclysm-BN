@@ -188,6 +188,7 @@ struct vehicle_part {
         friend class veh_interact;
         friend visitable<vehicle_cursor>;
         friend item_location;
+        friend const_item_location;
         friend class turret_data;
 
         enum : int { passenger_flag = 1,

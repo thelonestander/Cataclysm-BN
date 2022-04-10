@@ -1385,11 +1385,12 @@ drop_locations game_menus::inv::multidrop( player &p )
 {
     p.inv.restack( p );
 
-    const inventory_filter_preset preset( [ &p ]( const item_location & location ) {
-        return p.can_unwield( *location ).success();
-    } );
-
-    inventory_drop_selector inv_s( p, preset );
+    // TODO: Keep the filters
+    // const inventory_filter_preset preset( [ &p ]( const item_location & location ) {
+    //     return p.can_unwield( *location ).success();
+    // } );
+    // inventory_drop_selector inv_s( p, preset );
+    inventory_drop_selector inv_s( p );
 
     inv_s.add_character_items( p );
     inv_s.set_title( _( "Multidrop" ) );
